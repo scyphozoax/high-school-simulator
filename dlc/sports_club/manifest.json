@@ -1,0 +1,7 @@
+{
+    "name": "体育俱乐部DLC",
+    "version": "1.0.0",
+    "description": "添加体育俱乐部相关的行动和事件，让游戏更加丰富多彩~",
+    "author": "Defult",
+    "init_script": "init_script.py"
+}

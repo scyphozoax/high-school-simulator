@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game_texts>
+    <!-- 游戏剧情 -->
+    <stories>
+        <!-- 固定剧情 -->
+        <fixed_events>
+            <event month="9" week="1" effect="none">高三开学：你怀着紧张而期待的心情踏入教室，高三一年的冲刺正式开始了。</event>
+            <event month="10" week="2" effect="exam">第一次月考：高三的第一次正式考试，大家都拼尽全力。</event>
+            <event month="11" week="3" effect="exam">期中考试：半个学期过去了，高考的脚步越来越近。</event>
+            <event month="1" week="2" effect="exam">期末考试：高三上学期结束，寒假期间也要抓紧复习。</event>
+            <event month="3" week="1" effect="none">百日誓师：距离高考仅剩100天，学校举行誓师大会鼓舞士气。</event>
+            <event month="4" week="2" effect="exam">二模考试：模拟高考的重要考试，检验复习成果。</event>
+            <event month="5" week="3" effect="none">高考冲刺：最后的复习阶段，大家都在为梦想奋力一搏。</event>
+            <event month="6" week="1" effect="exam">高考：终于到了检验一年努力成果的时刻。</event>
+        </fixed_events>
+
+        <!-- 随机剧情 -->
+        <random_events>
+            <event condition="自律性 >= 70" prob="0.2" effect="智力 +2，持续3回合">发现高效复习方法：你找到了适合高考冲刺的复习方法，学习效率大幅提升。</event>
+            <event condition="社交 >= 60" prob="0.3" effect="自律性 +1，对应科目熟练度 +3">小组学习：和同学组成学习小组，互相帮助，共同进步。</event>
+            <event condition="自律性 <= 40" prob="0.4" effect="自律性 -1">复习分心：学习时注意力不集中，浪费了宝贵的复习时间。</event>
+            <event condition="体能 >= 60" prob="0.2" effect="体能 +2，压力值 -3">课间运动：短暂的运动让你精神焕发，压力也减轻了不少。</event>
+            <event condition="压力值 >= 70" prob="0.3" effect="智力 -1，体能 -1">压力过大：长期高压状态影响了身心健康，学习效率下降。</event>
+            <event condition="记忆力 >= 80" prob="0.2" effect="随机科目熟练度 +5">记忆爆发：突然想起了很多知识点，学习效果显著。</event>
+        </random_events>
+    </stories>
+
+<!-- 游戏结局部分已移至文件下方 -->
+    <menu>
+        <title>一中模拟器</title>
+        <subtitle>一年高三，冲刺高考</subtitle>
+        <version>Ver 0.1 (private_test)</version>
+        <main_menu>
+            <option>1. 开始新游戏</option>
+            <option>2. 读取存档</option>
+            <option>3. 退出游戏</option>
+        </main_menu>
+        <game_settings>
+            <title>===== 游戏设置 =====</title>
+            <option>3. 回到主菜单</option>
+        </game_settings>
+        <load_save>
+            <title>===== 读取存档 =====</title>
+            <no_folder>存档文件夹不存在，无法读取存档。</no_folder>
+            <no_saves>当前暂无可用存档。</no_saves>
+            <load_success>存档读取成功！</load_success>
+        </load_save>
+    </menu>
+
+    <status>
+        <properties_title>------ 属性 ------</properties_title>
+        <subjects_title>----- 学科熟练度 -----</subjects_title>
+        <no_energy>体力不足，无法执行此行动。</no_energy>
+        <memory_max>记忆力已达到上限，无法继续增加</memory_max>
+        <social_max>社交已达到上限，无法继续增加</social_max>
+        <memory_increase>记忆力 ＋1，所有科目熟练度固化10%</memory_max>
+        <invalid_input>输入无效，请重新选择。</invalid_input>
+        <invalid_number>输入无效，请输入数字。</invalid_number>
+        <no_exam>当前没有需要考试的科目。</no_exam>
+        <holiday_study>假期期间，你需要完成每日3小时自习。</holiday_study>
+        <action_limit>今日行动次数已用完，准备进入下一天...</action_limit>
+        <weekend_only>周末补课只能在周末执行。</weekend_only>
+        <weekday_only>晚自习复盘只能在周一至周四执行。</weekday_only>
+    </status>
+
+    <actions>
+        <title>可用行动:</title>
+        <action>
+            <name>早自习刷题</name>
+            <cost>体力消耗: ８</cost>
+            <description>对应科目熟练度 ＋３～５，自律性 ＋１</description>
+        </action>
+        <action>
+            <name>专题突破</name>
+            <cost>体力消耗: １０</cost>
+            <description>目标科目熟练度 ＋６～８，压力值 ＋３</description>
+        </action>
+        <action>
+            <name>晚自习复盘</name>
+            <cost>体力消耗: ７</cost>
+            <description>本周学习效果固化１０％，记忆力 ＋１</description>
+        </action>
+        <action>
+            <name>操场跑步</name>
+            <cost>体力消耗: ５</cost>
+            <description>体能 ＋２，压力值 －５</description>
+        </action>
+        <action>
+            <name>与同学讨论</name>
+            <cost>体力消耗: ４</cost>
+            <description>社交 ＋１，随机科目熟练度 ＋２</description>
+        </action>
+        <action>
+            <name>周末补课</name>
+            <cost>体力消耗: １２</cost>
+            <description>薄弱科目熟练度 ＋８，体力值上限 －２（次日恢复）</description>
+        </action>
+        <action>
+            <name>休息</name>
+            <cost>体力消耗: ０</cost>
+            <description>体力值 ＋５，压力值 －８</description>
+        </action>
+        <subject_select>可选择的科目:</subject_select>
+        <subject_select_exam>请选择要增加熟练度的科目:</subject_select_exam>
+        <random_subject>输入无效，随机选择一门科目。</random_subject>
+        <unlock_feature>恭喜！你解锁了'特级教师答疑'权限，指定科目熟练度 ＋１０/次。</unlock_feature>
+    </actions>
+
+    <story>
+        <opening>
+            <part>高二的努力让你打下了坚实的基础，现在你已经是一名高三学生了。站在人生的十字路口，你决心在这关键的一年里拼尽全力，为自己的未来奋斗。</part>
+            <part>通过选择不同的复习策略，提升自己的学习效率和学科熟练度，最终考上理想的大学。</part>
+            <part>高三开学：你怀着紧张而期待的心情踏入教室，高三一年的冲刺正式开始了。</part>
+        </opening>
+        <event>
+            <speech>校长激情澎湃的演讲让你热血沸腾，同学们的呐喊声此起彼伏。</speech>
+            <speech>你握紧拳头，暗下决心一定要在剩下的100天里拼尽全力，不留遗憾！</speech>
+        </event>
+    </story>
+
+    <endings>
+        <title>===== 游戏结束 =====</title>
+        <ending>
+            <name>名校录取</name>
+            <description>你凭借优异的成绩和全面的素质，被顶尖名校录取。未来的人生一片光明！</description>
+        </ending>
+        <ending>
+            <name>普通本科录取</name>
+            <description>你通过自己的努力，考上了一所不错的本科院校。继续加油！</description>
+        </ending>
+        <ending>
+            <name>专科录取</name>
+            <description>你被专科院校录取了。这只是人生的一个阶段，未来仍有无限可能。</description>
+        </ending>
+        <ending>
+            <name>辍学</name>
+            <description>由于长期压力过大且未能调整，你选择了辍学。人生道路千万条，重新出发依然有希望。</description>
+        </ending>
+        <ending>
+            <name>落榜</name>
+            <description>很遗憾，你未能考上理想的大学。不要灰心，人生还有很多其他的选择和机会。</description>
+        </ending>
+    </endings>
+
+    <misc>
+        <thanks>感谢游玩！再见～</thanks>
+        <not_implemented>该功能尚未实现。</not_implemented>
+    </misc>
+</game_texts>
